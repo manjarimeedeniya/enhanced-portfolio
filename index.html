@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manjari Meedeniya — Portfolio</title>
+
+<!-- Fonts & Devicon CDN -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+<style>
+  :root {
+    --bg-dark: #080b11;
+    --card-bg: rgba(18, 24, 38, 0.75);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-main: #f1f5f9;
+    --text-sub: #94a3b8;
+    
+    --neon-cyan: #00f2fe;
+    --neon-blue: #4facfe;
+    --neon-purple: #7f00ff;
+    --neon-pink: #e100ff;
+    --neon-green: #00e676;
+    --neon-amber: #ff9100;
+    
+    --radius: 16px;
+    --font-head: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-code: 'Fira Code', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(127, 0, 255, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 85% 60%, rgba(0, 242, 254, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 50% 90%, rgba(0, 230, 118, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  a { color: var(--neon-cyan); text-decoration: none; transition: 0.3s ease; }
+  a:hover { color: var(--neon-pink); }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(16px);
+    background: rgba(8, 11, 17, 0.85);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+  .nav-brand {
+    font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+  .nav-links a { color: var(--text-sub); font-family: var(--font-code); font-size: 0.85rem; }
+  .nav-links a:hover { color: var(--neon-cyan); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 80px 0 30px; }
+  .eyebrow {
+    font-family: var(--font-code); font-size: 0.82rem; text-transform: uppercase;
+    color: var(--neon-cyan); letter-spacing: 2px; margin-bottom: 8px; display: block;
+  }
+  .section-title { font-family: var(--font-head); font-size: 2.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 36px; }
+
+  /* ---------- HERO & ABOUT ---------- */
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; }
+  .hero-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 42px; backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+  .hero h1 {
+    font-family: var(--font-head); font-size: 2.8rem; line-height: 1.2; margin-bottom: 12px;
+    background: linear-gradient(135deg, #ffffff 30%, var(--text-sub));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-tag { color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.95rem; margin-bottom: 20px; display: block; }
+  .interests-pill-box { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+  .interest-pill {
+    background: rgba(0, 242, 254, 0.08); border: 1px solid rgba(0, 242, 254, 0.25);
+    color: var(--neon-cyan); font-size: 0.8rem; font-family: var(--font-code);
+    padding: 6px 14px; border-radius: 20px;
+  }
+  .profile-frame {
+    position: relative; border-radius: var(--radius); overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.12); box-shadow: 0 0 30px rgba(127, 0, 255, 0.3);
+    max-width: 360px; margin: 0 auto;
+  }
+  .profile-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ---------- EDUCATION SECTION ---------- */
+  .education-stack { display: flex; flex-direction: column; gap: 24px; }
+  .edu-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 32px; backdrop-filter: blur(8px);
+    transition: 0.3s ease;
+  }
+  .edu-card:hover { border-color: var(--neon-cyan); }
+  .edu-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+  .edu-title { font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; color: #fff; line-height: 1.3; }
+  .edu-subtitle { color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.9rem; margin-top: 4px; }
+  .edu-date { font-family: var(--font-code); font-size: 0.85rem; color: var(--neon-amber); background: rgba(255,145,0,0.1); padding: 4px 12px; border-radius: 12px; border: 1px solid rgba(255,145,0,0.3); }
+  .coursework-box { margin-top: 18px; padding-top: 18px; border-top: 1px dashed rgba(255,255,255,0.1); }
+  .coursework-title { font-family: var(--font-code); font-size: 0.85rem; color: var(--text-sub); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .course-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .course-pill { font-size: 0.8rem; background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); color: var(--text-main); padding: 4px 12px; border-radius: 8px; font-family: var(--font-code); }
+
+  /* ---------- SKILLS ---------- */
+  .skills-category { margin-bottom: 32px; }
+  .skills-category-title { font-family: var(--font-code); font-size: 0.95rem; color: var(--neon-amber); margin-bottom: 16px; letter-spacing: 1px; }
+  .skills-flex { display: flex; flex-wrap: wrap; gap: 14px; }
+  .skill-badge {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    padding: 12px 18px; border-radius: 12px; display: flex; align-items: center; gap: 12px;
+    font-size: 0.92rem; font-weight: 600; backdrop-filter: blur(8px); transition: 0.3s ease;
+  }
+  .skill-badge i, .skill-badge svg { font-size: 1.4rem; width: 24px; height: 24px; }
+  .skill-badge:hover { border-color: var(--neon-cyan); transform: translateY(-3px); }
+
+  /* ---------- CARDS & GENERAL LAYOUT ---------- */
+  .vertical-stack { display: flex; flex-direction: column; gap: 32px; }
+  
+  .card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 36px; display: flex; flex-direction: column;
+    gap: 16px; backdrop-filter: blur(8px); transition: 0.3s ease;
+  }
+  .card:hover { border-color: var(--neon-cyan); box-shadow: 0 16px 36px rgba(0,0,0,0.4); }
+  
+  .card-title { 
+    font-family: var(--font-head); 
+    font-size: 1.4rem; 
+    font-weight: 700; 
+    color: #fff; 
+    line-height: 1.35; 
+    margin-bottom: 6px; 
+    display: block; 
+  }
+  .card p.specs { 
+    font-family: var(--font-code); 
+    font-size: 0.85rem; 
+    color: var(--neon-amber); 
+    line-height: 1.5; 
+    margin-bottom: 12px; 
+    display: block; 
+  }
+  
+  .card ul { margin-left: 20px; color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; }
+  .card ul li { margin-bottom: 8px; }
+  
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .tag { font-family: var(--font-code); font-size: 0.78rem; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 4px 10px; border-radius: 6px; color: var(--text-sub); }
+
+  /* HORIZONTAL SCROLL CAROUSEL FOR PROJECTS & VOLUNTEERING */
+  .horizontal-carousel {
+    display: flex; gap: 28px; overflow-x: auto; padding-bottom: 20px;
+    scroll-snap-type: x mandatory; scrollbar-width: thin;
+    scrollbar-color: var(--neon-cyan) transparent;
+  }
+  .horizontal-carousel::-webkit-scrollbar { height: 8px; }
+  .horizontal-carousel::-webkit-scrollbar-thumb { background: rgba(0, 242, 254, 0.3); border-radius: 4px; }
+  .horizontal-carousel .carousel-card {
+    flex: 0 0 440px; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  /* GITHUB LINK BUTTON */
+  .github-btn {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main); font-family: var(--font-code); font-size: 0.8rem;
+    padding: 8px 16px; border-radius: 8px; transition: 0.3s ease; width: fit-content;
+  }
+  .github-btn:hover { background: rgba(0, 242, 254, 0.15); border-color: var(--neon-cyan); color: var(--neon-cyan); }
+
+  /* ONGOING CARD SPECIAL */
+  .ongoing-card {
+    background: linear-gradient(145deg, rgba(127, 0, 255, 0.12), rgba(18, 24, 38, 0.85));
+    border: 1px solid rgba(127, 0, 255, 0.4);
+  }
+  .pulse-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0, 230, 118, 0.15); border: 1px solid var(--neon-green);
+    color: var(--neon-green); font-family: var(--font-code); font-size: 0.78rem;
+    padding: 4px 12px; border-radius: 20px; width: fit-content; margin-bottom: 6px;
+  }
+  .pulse-dot { width: 8px; height: 8px; background: var(--neon-green); border-radius: 50%; animation: pulse 1.5s infinite; }
+
+  /* PHOTO GALLERIES */
+  .photo-gallery {
+    display: flex; gap: 16px; overflow-x: auto; padding: 10px 0 4px;
+    scroll-snap-type: x mandatory;
+  }
+  .photo-gallery::-webkit-scrollbar { height: 6px; }
+  .photo-gallery::-webkit-scrollbar-thumb { background: rgba(0, 242, 254, 0.3); border-radius: 4px; }
+  
+  .photo-card {
+    flex: 0 0 280px; height: 190px; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--card-border); background: #000; scroll-snap-align: start;
+    position: relative; transition: 0.3s ease;
+  }
+  .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.4s ease; }
+  .photo-card:hover img { transform: scale(1.05); }
+  .photo-card.diagram img { object-fit: contain; background: #fff; padding: 12px; }
+
+  /* MEDIA & VIDEO EMBEDS */
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 16px; }
+  .video-embed { border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border); aspect-ratio: 16/9; background: #000; }
+  .video-embed video, .video-embed iframe { width: 100%; height: 100%; border: 0; }
+
+  /* CONTACT DETAILS BOX */
+  .contact-info-list {
+    display: flex; flex-direction: column; gap: 12px; align-items: center; margin: 24px 0 32px;
+    font-family: var(--font-code); font-size: 0.95rem;
+  }
+  .contact-info-item { display: flex; align-items: center; gap: 10px; color: var(--text-main); }
+  .contact-info-item a { color: var(--neon-cyan); font-weight: 600; }
+  .contact-info-item a:hover { color: var(--neon-pink); text-decoration: underline; }
+
+  /* BUTTONS & FOOTER */
+  .btn-action {
+    display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px;
+    border-radius: 30px; font-family: var(--font-code); font-size: 0.88rem; font-weight: 600;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue)); color: #000; transition: 0.3s;
+  }
+  .btn-action:hover { transform: scale(1.04); color: #000; box-shadow: 0 0 20px rgba(0, 242, 254, 0.4); }
+
+  @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+  @media(max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .horizontal-carousel .carousel-card { flex: 0 0 85vw; }
+    .photo-card { flex: 0 0 240px; height: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="nav-brand">MANJARI MEEDENIYA</div>
+    <ul class="nav-links">
+      <li><a href="#about">// About</a></li>
+      <li><a href="#education">// Education</a></li>
+      <li><a href="#skills">// Skills</a></li>
+      <li><a href="#upcoming">// Ongoing</a></li>
+      <li><a href="#projects">// Projects</a></li>
+      <li><a href="#volunteering">// Leadership</a></li>
+      <li><a href="#activities">// Extracurriculars</a></li>
+      <li><a href="#contact">// Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="hero-grid">
+      <div class="hero-card">
+        <span class="eyebrow">DEPARTMENT OF ELECTRONIC & TELECOMMUNICATION ENGINEERING</span>
+        <h1>Manjari Meedeniya</h1>
+        <span class="hero-tag">Undergraduate @ University of Moratuwa (CGPA: 3.768)</span>
+        <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
+          Third-year Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, with a strong interest in intelligent hardware, electronics, and real-world application design. Experienced in analog/power electronics, electronic product development, circuit design, and network infrastructure through hands-on projects, alongside an ongoing project in autonomous UAV development. Actively expanding expertise across circuit design, robotics, autonomous UAVs, embedded hardware, computer vision, machine learning, and wireless networks.
+        </p>
+
+        <div class="interests-pill-box">
+          <span class="interest-pill">UAVs</span>
+          <span class="interest-pill">Electronic Product Development</span>
+          <span class="interest-pill">Electronic Circuit Design</span>
+          <span class="interest-pill">Robotics & Automation</span>
+          <span class="interest-pill">Machine Learning</span>
+          <span class="interest-pill">Computer Vision</span>
+          <span class="interest-pill">Embedded Systems</span>
+          <span class="interest-pill">Networking</span>
+        </div>
+
+        <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="https://drive.google.com/drive/folders/1RHrtw9vpqU_fsYF_BQswK7qfpIiqqTNV?usp=sharing" target="_blank" class="btn-action">View CV ↗</a>
+          <a href="#contact" class="btn-action" style="background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan);">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="profile-frame">
+        <img src="images/M_Photo.jpeg" alt="Manjari Meedeniya">
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education">
+    <div class="section-head">
+      <span class="eyebrow">ACADEMIC BACKGROUND</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+
+    <div class="education-stack">
+      <!-- University of Moratuwa -->
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <div class="edu-title">B.Sc. (Hons) in Electronic and Telecommunication Engineering</div>
+            <div class="edu-subtitle">University of Moratuwa, Sri Lanka</div>
+          </div>
+          <span class="edu-date">2023 – Present | CGPA: 3.768 / 4.2</span>
+        </div>
+        <p style="color: var(--text-sub); font-size: 0.92rem;">
+          Pursuing a specialized degree focusing on autonomous systems, embedded electronics, communication networks, and signal processing.
+        </p>
+        
+        <div class="coursework-box">
+          <div class="coursework-title">// Relevant Coursework</div>
+          <div class="course-pills">
+            <span class="course-pill">Electronic Circuit and Analysis</span>
+            <span class="course-pill">Signals and Systems</span>
+            <span class="course-pill">Electronic Circuit Design</span>
+            <span class="course-pill">Robotics</span>
+            <span class="course-pill">Internet of Things</span>
+            <span class="course-pill">Electronic Design Realization</span>
+            <span class="course-pill">Communication Systems Engineering</span>
+            <span class="course-pill">Communication Network Engineering</span>
+            <span class="course-pill">Image Processing and Machine Vision</span>
+            <span class="course-pill">Linear Algebra</span>
+            <span class="course-pill">Numerical Methods</span>
+            <span class="course-pill">Applied Statistics</span>
+            <span class="course-pill">Calculus</span>
+            <span class="course-pill">Differential Equations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- G.C.E. Advanced Level -->
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <div class="edu-title">G.C.E. Advanced Level (Physical Science Stream)</div>
+            <div class="edu-subtitle">Mahinda Rajapaksha College, Homagama</div>
+          </div>
+          <span class="edu-date">2021 | Z-Score: 2.6016</span>
+        </div>
+        <p style="color: var(--text-sub); font-size: 0.92rem;">
+          <strong style="color: #fff;">Results:</strong> 3 A's (Combined Mathematics, Physics, Chemistry) | <strong style="color: var(--neon-cyan);">ranking 145th nationwide and placing within the top 0.4% of candidates island-wide.</strong>
+        </p>
+      </div>
+
+      <!-- G.C.E. Ordinary Level -->
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <div class="edu-title">G.C.E. Ordinary Level</div>
+            <div class="edu-subtitle">Mahinda Rajapaksha College, Homagama</div>
+          </div>
+          <span class="edu-date">2018</span>
+        </div>
+        <p style="color: var(--text-sub); font-size: 0.92rem;">
+          <strong style="color: #fff;">Results:</strong> 9 A's (Mathematics, Science, English, French, Sinhala, History, ICT, Religion, Commerce)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="section-head">
+      <span class="eyebrow">TECHNICAL CAPABILITIES</span>
+      <h2 class="section-title">Skills & Toolstack</h2>
+    </div>
+
+    <!-- Programming -->
+    <div class="skills-category">
+      <div class="skills-category-title">// Programming Languages</div>
+      <div class="skills-flex">
+        <div class="skill-badge"><i class="devicon-python-plain colored"></i> Python</div>
+        <div class="skill-badge"><i class="devicon-cplusplus-plain colored"></i> C++</div>
+        <div class="skill-badge"><i class="devicon-java-plain colored"></i> Java</div>
+        <div class="skill-badge"><i class="devicon-matlab-plain"></i> MATLAB</div>
+      </div>
+    </div>
+
+    <!-- Robotics & Embedded -->
+    <div class="skills-category">
+      <div class="skills-category-title">// Robotics & Embedded Platforms</div>
+      <div class="skills-flex">
+        <div class="skill-badge"><i class="devicon-ros-original colored"></i> ROS 2 (Jazzy)</div>
+        <div class="skill-badge"><i class="devicon-arduino-plain colored"></i> Arduino IDE</div>
+        <div class="skill-badge"><i class="devicon-raspberrypi-line colored"></i> Raspberry Pi</div>
+        <div class="skill-badge"><i class="devicon-opencv-plain colored"></i> OpenCV</div>
+        <div class="skill-badge"><i class="devicon-linux-plain colored"></i> Linux / Ubuntu</div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10M12 7v10"/></svg> Webots & Gazebo
+        </div>
+      </div>
+    </div>
+
+    <!-- Design & Simulation -->
+    <div class="skills-category">
+      <div class="skills-category-title">// Design & Simulation Tools</div>
+      <div class="skills-flex">
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-amber)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> SolidWorks (3D CAD)
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> LTspice (Circuit Sim)
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-pink)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg> GNU Radio (SDR)
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Cisco Packet Tracer
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONGOING PROJECTS -->
+  <section id="upcoming">
+    <div class="section-head">
+      <span class="eyebrow">IN THE LAB</span>
+      <h2 class="section-title">Ongoing Projects</h2>
+    </div>
+
+    <div class="vertical-stack">
+      <!-- Autonomous Quadcopter -->
+      <div class="card ongoing-card">
+        <div>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Development</div>
+          <span class="card-title">Autonomous Quadcopter Project</span>
+          <p class="specs">May 2026 – Present | Pixhawk, ArduPilot, Companion Computer</p>
+          <ul>
+            <li>Integrating Pixhawk (ArduPilot) with a Raspberry Pi companion computer for real-time onboard computer vision processing.</li>
+            <li>Deploying algorithms for dynamic target recognition, obstacle avoidance, and precise automated landing.</li>
+            <li>Configuring telemetry streams with MAVSDK and managing high-current power distribution circuitry.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">UAV Navigation</span><span class="tag">ArduPilot</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">MAVSDK</span>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/autonomous-quadcopter" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 6-DOF Manipulator -->
+      <div class="card ongoing-card">
+        <div>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Research</div>
+          <span class="card-title">6-DOF Manipulator ROS 2 Kinematic Modeling</span>
+          <p class="specs">Aug 2026 – Present | ROS 2 Jazzy, Xacro, RViz Kinematics</p>
+          <ul>
+            <li>Structuring a ROS 2 (Jazzy) metapackage (`mycobot_ros2`) and description package (`mycobot_description`) using `ament_cmake`.</li>
+            <li>Integrating 3D COLLADA mesh assets (.dae) and configuring build export rules in `CMakeLists.txt` and `package.xml`.</li>
+            <li>Defining modular Xacro robot descriptions for full joint dynamic calculation, path trajectory planning, and RViz simulation.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">ROS 2 Jazzy</span><span class="tag">Xacro / URDF</span><span class="tag">RViz</span><span class="tag">C++ / CMake</span>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/mycobot-ros2" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO ARCHIVE (HORIZONTALLY SCROLLING CAROUSEL) -->
+  <section id="projects">
+    <div class="section-head">
+      <span class="eyebrow">PORTFOLIO ARCHIVE</span>
+      <h2 class="section-title">Featured Completed Projects</h2>
+    </div>
+
+    <div class="horizontal-carousel">
+      <!-- Atlas EQ v1 -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Atlas EQ v1 — Star-Tracking Mount</span>
+          <p class="specs">Feb 2026 – Jul 2026 | German Equatorial Mount Structure</p>
+          <ul>
+            <li>Designed the alt-azimuth base assembly to provide stable polar alignment for long-exposure astrophotography.</li>
+            <li>Optimized dynamic component profiles in SolidWorks for mild-steel laser cutting and 3D printing.</li>
+          </ul>
+          <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Laser Cutting</span><span class="tag">3D Printing</span></div>
+        </div>
+
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/Atlas 1.jpeg" alt="Atlas Mount 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Atlas 2.jpeg" alt="Atlas Mount 2" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Atlas3.jpeg" alt="Atlas Mount 3" loading="lazy"></div>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/atlas-eq-v1" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Buck Converter -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Analog All-Class Buck Converter</span>
+          <p class="specs">Feb 2026 – May 2026 | IRF540 MOSFETs & IR2104 Driver</p>
+          <ul>
+            <li>Co-designed power switching stages utilizing IRF540 MOSFETs and freewheeling diodes.</li>
+            <li>Implemented high-side gate driver architecture powered by IR2104 IC and bootstrap circuitry.</li>
+          </ul>
+          <div class="tags"><span class="tag">Power Electronics</span><span class="tag">LTspice</span><span class="tag">Circuit Design</span></div>
+        </div>
+
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/buck.jpeg" alt="Buck Converter Circuit" loading="lazy"></div>
+            <div class="photo-card"><img src="images/buck 2.png" alt="Buck Converter Testing" loading="lazy"></div>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/analog-buck-converter" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Weighing Scale -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Weighing Scale Using Load Cells</span>
+          <p class="specs">Jul 2025 – Dec 2025 | Precision Analog Hardware</p>
+          <ul>
+            <li>Engineered signal conditioning using custom instrumentation amplifiers and zero/span balancing stages.</li>
+            <li>Designed and 3D-printed the protective outer chassis and load-bearing internal support frame.</li>
+          </ul>
+          <div class="tags"><span class="tag">Analog Design</span><span class="tag">Load Cells</span><span class="tag">3D Printing</span></div>
+        </div>
+
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/Final Product Photo 2.jpeg" alt="Weighing Scale" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Final Product Photo 3.png" alt="Weighing Scale CAD" loading="lazy"></div>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/strain-gauge-weighing-scale" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Fall Track Watch -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Fall Track — Wearable Assistance Watch</span>
+          <p class="specs">Feb 2025 – Jun 2025 | Embedded Sensors & Low Power Hardware</p>
+          <ul>
+            <li>Developed a wearable assistance watch to detect sudden posture changes for fall protection.</li>
+            <li>Conceptualized circuit design, microcontroller integration, and sensor telemetry.</li>
+          </ul>
+          <div class="tags"><span class="tag">Wearable Hardware</span><span class="tag">Embedded Systems</span><span class="tag">Sensors</span></div>
+        </div>
+
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/falltrack watch.jfif" alt="Falltrack Watch Prototype" loading="lazy"></div>
+            <div class="photo-card"><img src="images/falltrack team.jpeg" alt="Falltrack Team" loading="lazy"></div>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/falltrack-wearable" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Campus Network -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">University Campus Network Design</span>
+          <p class="specs">Feb 2026 – Apr 2026 | Cisco Packet Tracer & Dual-Stack IP</p>
+          <ul>
+            <li>Designed and simulated a multi-building enterprise campus backbone network.</li>
+            <li>Configured IPv4 VLSM, IPv6 SLAAC addressing, dynamic OSPF routing, and redundant links.</li>
+          </ul>
+          <div class="tags"><span class="tag">Networking</span><span class="tag">Cisco Packet Tracer</span><span class="tag">OSPF</span></div>
+        </div>
+
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card diagram"><img src="images/university_backbone.png" alt="University Backbone Network" loading="lazy"></div>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/campus-network-design" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> View Repository ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEERING EXPERIENCE (HORIZONTALLY SCROLLING CAROUSEL) -->
+  <section id="volunteering">
+    <div class="section-head">
+      <span class="eyebrow">COMMUNITY & LEADERSHIP</span>
+      <h2 class="section-title">Volunteering & IEEE Roles</h2>
+    </div>
+
+    <div class="horizontal-carousel">
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Membership Development Committee Member</span>
+          <p class="specs">IEEE Student Branch, University of Moratuwa | Feb 2026 – Present</p>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
+            Coordinating student engagement initiatives, facilitating membership registration drives, and active community outreach across the department.
+          </p>
+        </div>
+        <div class="photo-gallery">
+          <div class="photo-card"><img src="images/Membership Committee.jpeg" alt="Membership Committee" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Selection Committee Member — MoraForesight 4.0 & 3.0</span>
+          <p class="specs">IEEE Student Branch, University of Moratuwa | 2025 – 2026</p>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
+            Evaluating candidate applications, organizing selection processes, and managing panel interview logistics for major university initiatives.
+          </p>
+        </div>
+        <div class="photo-gallery">
+          <div class="photo-card"><img src="images/moraforseight 4.0 1.jpeg" alt="MoraForesight 4.0" loading="lazy"></div>
+          <div class="photo-card"><img src="images/moraf 1.jpeg" alt="MoraForesight 3.0" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Event Committee Member — RoboRoarz Sri Lanka 2026</span>
+          <p class="specs">IEEE Student Branch, University of Moratuwa | Oct 2025 – Jun 2026</p>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
+            Assisting event logistics, arena setup, and technical coordination for national-level robotics competitions.
+          </p>
+        </div>
+        <div class="photo-gallery">
+          <div class="photo-card"><img src="images/roboaroaz 1.jpeg" alt="RoboRoarz Event" loading="lazy"></div>
+          <div class="photo-card"><img src="images/Roboaroaz OC.jpeg" alt="RoboRoarz Committee" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANNOUNCING, MEDIA & SPORTS -->
+  <section id="activities">
+    <div class="section-head">
+      <span class="eyebrow">BEYOND ENGINEERING</span>
+      <h2 class="section-title">Public Speaking & Extracurriculars</h2>
+    </div>
+
+    <div class="vertical-stack">
+      <div class="card">
+        <span class="card-title">Public Speaking & Compère Achievements</span>
+        <ul>
+          <li>Hosted online technical webinars and official sessions organized by the IEEE Student Branch.</li>
+          <li>Semi-Finalist in Sinhala Announcing Category at Mora Lenz Media Awards '25.</li>
+          <li>Reserved Semi-Finalist at XVIII Speech Olympiad, Gavel Club of Moratuwa.</li>
+        </ul>
+
+        <div class="media-grid">
+          <div class="video-embed">
+            <video controls poster="images/M_Photo.jpeg">
+              <source src="images/ieee compering.mp4" type="video/mp4">
+              Your browser does not support HTML video playback.
+            </video>
+          </div>
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/QxiDBv1Zng4" title="MoraForesight 3.0" allowfullscreen></iframe>
+          </div>
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/BpOgg6j1Jy0" title="IEEE Online Sessions" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="card-title">Badminton Tournaments</span>
+          <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
+            Active competitor in inter-hall and university badminton tournaments.
+          </p>
+        </div>
+        <div class="photo-gallery">
+          <div class="photo-card"><img src="images/Badminton 1.jpeg" alt="Badminton Match 1" loading="lazy"></div>
+          <div class="photo-card"><img src="images/badminton 2.jpeg" alt="Badminton Match 2" loading="lazy"></div>
+          <div class="photo-card"><img src="images/badminton 3.jpeg" alt="Badminton Team" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER -->
+  <section id="contact">
+    <div class="card" style="text-align: center; padding: 50px 24px;">
+      <span class="eyebrow">LANGUAGES SPOKEN</span>
+      <p style="font-family: var(--font-code); color: var(--neon-cyan); margin-bottom: 28px;">
+        English (Intermediate) | Sinhala (Native) | French (Beginner)
+      </p>
+
+      <span class="eyebrow">GET IN TOUCH</span>
+      <h2 style="font-family: var(--font-head); font-size: 2.2rem; margin-bottom: 12px;">Let's Connect</h2>
+      <p style="color: var(--text-sub); max-width: 520px; margin: 0 auto 18px;">
+        Open to engineering projects, research collaborations, and hardware design opportunities.
+      </p>
+
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <span>📧 Email:</span>
+          <a href="mailto:meedeniyammh.23@uom.lk">meedeniyammh.23@uom.lk</a>
+        </div>
+        <div class="contact-info-item">
+          <span>📞 Phone:</span>
+          <a href="tel:+94715577868">+94 71 557 7868</a>
+        </div>
+      </div>
+      
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="mailto:meedeniyammh.23@uom.lk" class="btn-action">Email Me Directly</a>
+        <a href="https://linkedin.com/in/manjarimeedeniya" target="_blank" class="btn-action" style="background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan);">LinkedIn ↗</a>
+        <a href="https://github.com/manjarimeedeniya" target="_blank" class="btn-action" style="background: transparent; border: 1px solid var(--neon-pink); color: var(--neon-pink);">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="text-align: center; padding: 40px 0; font-family: var(--font-code); font-size: 0.8rem; color: var(--text-sub);">
+  &copy; 2026 Manjari Meedeniya. Department of Electronic & Telecommunication Engineering, UoM.
+</footer>
+
+</body>
+</html>
