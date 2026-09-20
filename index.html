@@ -25,14 +25,13 @@
     --neon-pink: #e100ff;
     --neon-green: #00e676;
     --neon-amber: #ff9100;
-    
+
     --radius: 16px;
     --font-head: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-code: 'Fira Code', monospace;
   }
 
-  /* Color accents for lab hardware badges */
   .icon-scope { color: var(--neon-cyan); }
   .icon-gen { color: var(--neon-pink); }
   .icon-psu { color: var(--neon-amber); }
@@ -72,12 +71,12 @@
     background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
-  .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
   .nav-links a { color: var(--text-sub); font-family: var(--font-code); font-size: 0.85rem; }
   .nav-links a:hover { color: var(--neon-cyan); }
 
   /* ---------- SECTIONS ---------- */
-  section { padding: 80px 0 30px; }
+  section { padding: 70px 0 30px; }
   .eyebrow {
     font-family: var(--font-code); font-size: 0.82rem; text-transform: uppercase;
     color: var(--neon-cyan); letter-spacing: 2px; margin-bottom: 8px; display: block;
@@ -122,10 +121,6 @@
   .edu-title { font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; color: #fff; line-height: 1.3; }
   .edu-subtitle { color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.9rem; margin-top: 4px; }
   .edu-date { font-family: var(--font-code); font-size: 0.85rem; color: var(--neon-amber); background: rgba(255,145,0,0.1); padding: 4px 12px; border-radius: 12px; border: 1px solid rgba(255,145,0,0.3); }
-  .coursework-box { margin-top: 18px; padding-top: 18px; border-top: 1px dashed rgba(255,255,255,0.1); }
-  .coursework-title { font-family: var(--font-code); font-size: 0.85rem; color: var(--text-sub); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
-  .course-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .course-pill { font-size: 0.8rem; background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); color: var(--text-main); padding: 4px 12px; border-radius: 8px; font-family: var(--font-code); }
 
   /* ---------- SKILLS ---------- */
   .skills-category { margin-bottom: 32px; }
@@ -141,21 +136,22 @@
 
   /* ---------- CARDS & GENERAL LAYOUT ---------- */
   .vertical-stack { display: flex; flex-direction: column; gap: 32px; }
+  .grid-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
   
   .card {
     background: var(--card-bg); border: 1px solid var(--card-border);
-    border-radius: var(--radius); padding: 36px; display: flex; flex-direction: column;
+    border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column;
     gap: 16px; backdrop-filter: blur(8px); transition: 0.3s ease;
   }
   .card:hover { border-color: var(--neon-cyan); box-shadow: 0 16px 36px rgba(0,0,0,0.4); }
   
   .card-title { 
     font-family: var(--font-head); 
-    font-size: 1.4rem; 
+    font-size: 1.35rem; 
     font-weight: 700; 
     color: #fff; 
     line-height: 1.35; 
-    margin-bottom: 6px; 
+    margin-bottom: 4px; 
     display: block; 
   }
   .card p.specs { 
@@ -163,17 +159,17 @@
     font-size: 0.85rem; 
     color: var(--neon-amber); 
     line-height: 1.5; 
-    margin-bottom: 12px; 
+    margin-bottom: 8px; 
     display: block; 
   }
   
-  .card ul { margin-left: 20px; color: var(--text-sub); font-size: 0.95rem; line-height: 1.8; }
-  .card ul li { margin-bottom: 8px; }
+  .card ul { margin-left: 20px; color: var(--text-sub); font-size: 0.92rem; line-height: 1.7; }
+  .card ul li { margin-bottom: 6px; }
   
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
   .tag { font-family: var(--font-code); font-size: 0.78rem; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 4px 10px; border-radius: 6px; color: var(--text-sub); }
 
-  /* HORIZONTAL SCROLL CAROUSEL FOR PROJECTS & VOLUNTEERING */
+  /* HORIZONTAL SCROLL CAROUSEL FOR COMPLETED PROJECTS */
   .horizontal-carousel {
     display: flex; gap: 28px; overflow-x: auto; padding-bottom: 20px;
     scroll-snap-type: x mandatory; scrollbar-width: thin;
@@ -185,9 +181,9 @@
     flex: 0 0 440px; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: space-between;
   }
 
-  /* GITHUB LINK BUTTON */
+  /* BUTTONS & LINKS */
   .github-btn {
-    display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; margin-right: 8px;
     background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--text-main); font-family: var(--font-code); font-size: 0.8rem;
     padding: 8px 16px; border-radius: 8px; transition: 0.3s ease; width: fit-content;
@@ -232,13 +228,16 @@
   .contact-info-item a { color: var(--neon-cyan); font-weight: 600; }
   .contact-info-item a:hover { color: var(--neon-pink); text-decoration: underline; }
 
-  /* BUTTONS & FOOTER */
   .btn-action {
     display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px;
     border-radius: 30px; font-family: var(--font-code); font-size: 0.88rem; font-weight: 600;
     background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue)); color: #000; transition: 0.3s;
   }
   .btn-action:hover { transform: scale(1.04); color: #000; box-shadow: 0 0 20px rgba(0, 242, 254, 0.4); }
+
+  /* REFERENCES GRID */
+  .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .ref-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 24px; border-radius: var(--radius); }
 
   @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
   @media(max-width: 768px) {
@@ -276,18 +275,20 @@
         <h1>Manjari Meedeniya</h1>
         <span class="hero-tag">Undergraduate @ University of Moratuwa</span>
         <p style="color: var(--text-sub); font-size: 0.95rem; line-height: 1.8;">
-          Third-year Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, with a strong interest in autonomous systems, robotics, embedded technology, computer vision, machine learning, and wireless networks. Experienced in electronic product development, circuit design, analog/power electronics, signal processing, digital communication, and network infrastructure. Currently expanding expertise through hands-on projects, including autonomous UAV development with flight control and vision algorithms.
+          Third-year Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, with a strong interest in intelligent hardware, electronics, and real-world application design. Experienced in analog/power electronics, electronic product development, circuit design, Internet of Things, and network infrastructure through hands-on projects, alongside an ongoing project in autonomous UAV development. Driven by a fast learning ability and strong skills in team leadership, technical communication, and project coordination.
         </p>
 
         <div class="interests-pill-box">
-          <span class="interest-pill">Autonomous Systems</span>
-          <span class="interest-pill">Robotics</span>
-          <span class="interest-pill">Embedded Systems</span>
-          <span class="interest-pill">Computer Vision</span>
+          <span class="interest-pill">UAVs</span>
+          <span class="interest-pill">Electronic Product Development</span>
+          <span class="interest-pill">Electronic Circuit Design</span>
+          <span class="interest-pill">Internet of Things</span>
+          <span class="interest-pill">Robotics & Automation</span>
           <span class="interest-pill">Machine Learning</span>
+          <span class="interest-pill">Computer Vision</span>
+          <span class="interest-pill">Embedded Systems</span>
           <span class="interest-pill">Wireless Networks</span>
-          <span class="interest-pill">Circuit Design</span>
-          <span class="interest-pill">Power Electronics</span>
+          <span class="interest-pill">Announcing & Event Hosting</span>
         </div>
 
         <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
@@ -317,39 +318,59 @@
             <div class="edu-title">B.Sc. (Hons) in Electronic and Telecommunication Engineering</div>
             <div class="edu-subtitle">University of Moratuwa, Sri Lanka</div>
           </div>
-          <span class="edu-date">2024 – Present</span>
+          <span class="edu-date">Mar 2024 – Present</span>
         </div>
         <p style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.92rem; margin-bottom: 8px;">
-          <strong>Standing:</strong> Third-Year Undergraduate
+          <strong>CGPA:</strong> 3.768 / 4.00
+        </p>
+        <p style="color: var(--text-sub); font-size: 0.88rem; font-family: var(--font-code); margin-bottom: 12px;">
+          Semester GPAs: 4.00 (Sem 1, Dean's List) | 3.76 (Sem 2) | 3.51 (Sem 3) | 3.90 (Sem 4, Dean's List)
         </p>
         <p style="color: var(--text-sub); font-size: 0.92rem;">
-          Specializing in autonomous systems, robotics, embedded hardware, computer vision, machine learning, and wireless communication networks.
+          Pursuing a specialized degree focusing on embedded electronics, autonomous systems, robotics, machine learning, computer vision, and communication networks.
         </p>
-        
-        <div class="coursework-box">
-          <div class="coursework-title">// Core Focus Areas</div>
-          <div class="course-pills">
-            <span class="course-pill">Electronic Product Development</span>
-            <span class="course-pill">Circuit Design</span>
-            <span class="course-pill">Analog & Power Electronics</span>
-            <span class="course-pill">Signal Processing</span>
-            <span class="course-pill">Digital Logic & FPGA Programming</span>
-            <span class="course-pill">Robotics & Computer Vision</span>
-            <span class="course-pill">Wireless Networks & SDR</span>
-          </div>
-        </div>
       </div>
 
-      <!-- Secondary Education -->
+      <!-- G.C.E. Advanced Level -->
       <div class="edu-card">
         <div class="edu-header">
           <div>
-            <div class="edu-title">G.C.E. Advanced Level & Ordinary Level</div>
+            <div class="edu-title">G.C.E. Advanced Level (Physical Science Stream)</div>
             <div class="edu-subtitle">Mahinda Rajapaksha College, Homagama</div>
           </div>
+          <span class="edu-date">Jan 2014 – Dec 2022</span>
         </div>
         <p style="color: var(--text-sub); font-size: 0.92rem;">
-          Completed secondary physical science and standard curriculum qualifications.
+          <strong style="color: #fff;">Results:</strong> 3 A's (Combined Mathematics, Physics, Chemistry) | <strong style="color: var(--neon-cyan);">Z-Score: 2.6016 (Island Rank 145th)</strong>
+        </p>
+      </div>
+
+      <!-- G.C.E. Ordinary Level -->
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <div class="edu-title">G.C.E. Ordinary Level</div>
+            <div class="edu-subtitle">Mahinda Rajapaksha College, Homagama</div>
+          </div>
+          <span class="edu-date">2019</span>
+        </div>
+        <p style="color: var(--text-sub); font-size: 0.92rem;">
+          <strong style="color: #fff;">Results:</strong> 9 A's including Mathematics, Science, and English
+        </p>
+      </div>
+
+      <!-- Supplementary Language Studies -->
+      <div class="edu-card">
+        <div class="edu-header">
+          <div>
+            <div class="edu-title">Supplementary Language Studies</div>
+            <div class="edu-subtitle">Aquinas College & Alliance Française de Colombo</div>
+          </div>
+          <span class="edu-date">2018 – 2023</span>
+        </div>
+        <p style="color: var(--text-sub); font-size: 0.92rem;">
+          • English Language (Intermediate) — Aquinas College of Higher Studies<br>
+          • French Language (Beginner) & G.C.E. O/L French — Alliance Française de Colombo
         </p>
       </div>
     </div>
@@ -362,50 +383,93 @@
       <h2 class="section-title">Skills & Toolstack</h2>
     </div>
 
-    <!-- Programming & Languages -->
+    <!-- Programming -->
     <div class="skills-category">
-      <div class="skills-category-title">// Hardware Description & Languages</div>
+      <div class="skills-category-title">// Programming Languages</div>
       <div class="skills-flex">
         <div class="skill-badge"><i class="devicon-python-plain colored"></i> Python</div>
-        <div class="skill-badge"><i class="devicon-cplusplus-plain colored"></i> C++ / C</div>
-        <div class="skill-badge"><i class="devicon-matlab-plain colored"></i> Verilog HDL</div>
+        <div class="skill-badge"><i class="devicon-cplusplus-plain colored"></i> C++</div>
         <div class="skill-badge"><i class="devicon-matlab-plain"></i> MATLAB</div>
+        <div class="skill-badge"><i class="devicon-java-plain colored"></i> Java</div>
       </div>
     </div>
 
-    <!-- Robotics & Embedded Platforms -->
+    <!-- Computer Vision & AI -->
     <div class="skills-category">
-      <div class="skills-category-title">// Robotics, Vision & Embedded Systems</div>
+      <div class="skills-category-title">// Computer Vision, AI & Robotics</div>
       <div class="skills-flex">
-        <div class="skill-badge"><i class="devicon-ros-original colored"></i> ROS 2</div>
-        <div class="skill-badge"><i class="devicon-raspberrypi-line colored"></i> Raspberry Pi 5</div>
-        <div class="skill-badge"><i class="devicon-linux-plain colored"></i> Pixhawk Flight Controller</div>
-        <div class="skill-badge"><i class="devicon-opencv-plain colored"></i> Computer Vision / OpenCV</div>
-        <div class="skill-badge"><i class="devicon-embeddedc-plain colored"></i> Optical Flow Sensors</div>
-        <div class="skill-badge"><i class="devicon-linux-plain colored"></i> Altera DE0-Nano FPGA</div>
+        <div class="skill-badge"><i class="devicon-opencv-plain colored"></i> OpenCV</div>
+        <div class="skill-badge"><i class="devicon-ros-original colored"></i> ROS 2 (Jazzy)</div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg> YOLO Object Detection
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Digital Image Processing
+        </div>
+        <div class="skill-badge"><i class="devicon-arduino-plain colored"></i> Arduino IDE</div>
+        <div class="skill-badge"><i class="devicon-linux-plain colored"></i> Linux / Ubuntu</div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10M12 7v10"/></svg> Webots, Gazebo & ArduPilot
+        </div>
       </div>
     </div>
 
-    <!-- Software & Simulation Tools -->
+    <!-- Design & Simulation -->
     <div class="skills-category">
-      <div class="skills-category-title">// Design, SDR & Simulation Tools</div>
+      <div class="skills-category-title">// Design, Simulation & Networking</div>
       <div class="skills-flex">
-        <div class="skill-badge">SolidWorks (CAD)</div>
-        <div class="skill-badge">Quartus Prime (FPGA)</div>
-        <div class="skill-badge">GNU Radio (SDR)</div>
-        <div class="skill-badge">Cisco Packet Tracer</div>
-        <div class="skill-badge">LTspice</div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-amber)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> SolidWorks (3D CAD)
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> LTspice & Multisim
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-pink)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg> GNU Radio (SDR)
+        </div>
+        <div class="skill-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Cisco Packet Tracer
+        </div>
       </div>
     </div>
 
-    <!-- Laboratory & Measurement Equipment -->
+    <!-- Laboratory & Instrumentation -->
     <div class="skills-category">
-      <div class="skills-category-title">// Hardware Realization & Prototyping</div>
+      <div class="skills-category-title">// Laboratory Skills & Instrumentation</div>
       <div class="skills-flex">
-        <div class="skill-badge">Analog & Power Stage Design</div>
-        <div class="skill-badge">3D Printing & Laser Cutting</div>
-        <div class="skill-badge">Instrumentation Amplifiers</div>
-        <div class="skill-badge">Digital Multimeters & Oscilloscopes</div>
+        <div class="skill-badge">
+          <svg class="icon-scope" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M6 12h2l1.5-4 3 8 2.5-6 1.5 2h3"/>
+            <circle cx="18" cy="7" r="1" fill="currentColor"/>
+          </svg>
+          Oscilloscopes
+        </div>
+        <div class="skill-badge">
+          <svg class="icon-gen" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0"/>
+            <circle cx="18" cy="8" r="1" fill="currentColor"/>
+          </svg>
+          Function / Signal Generators
+        </div>
+        <div class="skill-badge">
+          <svg class="icon-psu" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M7 9h4M9 7v4"/><path d="M13 15h4"/>
+            <circle cx="7" cy="15" r="1" fill="currentColor"/>
+          </svg>
+          AC & DC Power Supplies
+        </div>
+        <div class="skill-badge">
+          <svg class="icon-dmm" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="3" width="14" height="18" rx="2"/>
+            <rect x="8" y="6" width="8" height="4" rx="1"/>
+            <circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/>
+            <path d="M9 17h6"/>
+          </svg>
+          Digital Multimeters & Validation
+        </div>
       </div>
     </div>
   </section>
@@ -421,18 +485,99 @@
       <!-- Autonomous Quadcopter -->
       <div class="card ongoing-card">
         <div>
-          <div class="pulse-badge"><span class="pulse-dot"></span> Active Competition Development</div>
-          <span class="card-title">Autonomous Quadcopter — SLIIT ROBOFEST 2026</span>
-          <p class="specs">Pixhawk Flight Controller | Raspberry Pi 5 | ROS 2 | Optical Flow & Computer Vision</p>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Development</div>
+          <span class="card-title">Autonomous Quadcopter Project</span>
+          <p class="specs">May 2026 – Present | Pixhawk, ArduPilot, Raspberry Pi, MAVSDK</p>
           <ul>
-            <li>Developing an autonomous quadcopter tailored for the SLIIT ROBOFEST 2026 competition.</li>
-            <li>Integrating a Pixhawk flight controller with a Raspberry Pi 5 companion computer utilizing MAVLink telemetry protocol.</li>
-            <li>Implementing optical flow sensors and computer vision algorithms within a ROS 2 software stack for precision landing guidance and autonomous control.</li>
-            <li>Collaborating as part of a multi-disciplinary engineering project team.</li>
+            <li>Integrating a Pixhawk flight controller running ArduPilot with a Raspberry Pi companion computer for onboard computer vision processing.</li>
+            <li>Implementing real-time computer vision algorithms for target recognition, obstacle avoidance, and automated landing sequences.</li>
+            <li>Managing full-stack drone integration including power distribution, failsafe protocols, and MAVSDK telemetry.</li>
           </ul>
           <div class="tags">
-            <span class="tag">Autonomous Quadcopter</span><span class="tag">Pixhawk</span><span class="tag">Raspberry Pi 5</span><span class="tag">ROS 2</span><span class="tag">MAVLink</span><span class="tag">Computer Vision</span>
+            <span class="tag">UAV Navigation</span><span class="tag">ArduPilot</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">MAVSDK</span>
           </div>
+          <a href="https://github.com/manjarimeedeniya/Autonomous-Quadcopter" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Vision-Based Object Following Robot -->
+      <div class="card ongoing-card">
+        <div>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Development</div>
+          <span class="card-title">Vision-Based Object Following Robot (Webots & OpenCV)</span>
+          <p class="specs">Sep 2026 – Present | Webots, Python, OpenCV, Closed-Loop Control</p>
+          <ul>
+            <li>Developed a real-time vision-based object-following system for an e-puck robot using Webots, Python, and OpenCV.</li>
+            <li>Implemented HSV-based red-object detection and calculated target centroids from live camera feeds.</li>
+            <li>Converted image-position errors into proportional steering commands for differential-drive motor control and visual proximity stopping.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">OpenCV</span><span class="tag">Webots</span><span class="tag">Closed-Loop Control</span><span class="tag">Python</span>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/computer-vision-image-processing" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- UAV-Based Crop Detection using YOLO -->
+      <div class="card ongoing-card">
+        <div>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Research</div>
+          <span class="card-title">UAV-Based Crop Detection using YOLO</span>
+          <p class="specs">Sep 2026 – Present | YOLO, PyTorch, Agricultural Datasets, CNNs</p>
+          <ul>
+            <li>Developing a computer vision system for detecting crops from aerial/UAV imagery using YOLO object detection models.</li>
+            <li>Fine-tuning pretrained YOLO architectures on agricultural datasets using transfer learning and IoU/NMS post-processing.</li>
+            <li>Exploring automated crop counting and spatial distribution analysis from detected crop regions.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">YOLO</span><span class="tag">UAV Aerial Imaging</span><span class="tag">PyTorch</span><span class="tag">CNNs</span>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/Drone-Crop-Weed-Detection" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- ArduPilot SITL & MAVLink UAV Control -->
+      <div class="card ongoing-card">
+        <div>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Development</div>
+          <span class="card-title">ArduPilot SITL & MAVLink UAV Control</span>
+          <p class="specs">Aug 2026 – Present | ArduPilot SITL, MAVLink, pymavlink, Python</p>
+          <ul>
+            <li>Built a simulation-based UAV control system using ArduPilot SITL and pymavlink to execute autonomous telemetry monitoring and navigation.</li>
+            <li>Implemented GUIDED-mode flight control, including vehicle arming, takeoff, and position-based movement using `SET_POSITION_TARGET_LOCAL_NED`.</li>
+            <li>Developed an autonomous L-shaped navigation sequence guided by live position telemetry feedback.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">ArduPilot SITL</span><span class="tag">MAVLink</span><span class="tag">pymavlink</span><span class="tag">Autonomous Trajectory</span>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/ArduPilot-SITL-UAV-Simulation-MAVLink-Control" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 6-DOF Manipulator -->
+      <div class="card ongoing-card">
+        <div>
+          <div class="pulse-badge"><span class="pulse-dot"></span> Active Research</div>
+          <span class="card-title">6-DOF Manipulator ROS 2 Kinematic Modeling</span>
+          <p class="specs">Aug 2026 – Present | ROS 2 Jazzy, Xacro, CMake, RViz Kinematics</p>
+          <ul>
+            <li>Structuring a ROS 2 (Jazzy) metapackage (`mycobot_ros2`) and description package (`mycobot_description`) using `ament_cmake`.</li>
+            <li>Integrating 3D COLLADA mesh assets (.dae) and defining modular Xacro robot description files for joint kinematics and RViz visualization.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">ROS 2 Jazzy</span><span class="tag">Xacro / URDF</span><span class="tag">RViz</span><span class="tag">C++ / CMake</span>
+          </div>
+          <a href="https://github.com/manjarimeedeniya/mycobot_ros2_jazzy" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
         </div>
       </div>
     </div>
@@ -442,45 +587,84 @@
   <section id="projects">
     <div class="section-head">
       <span class="eyebrow">PORTFOLIO ARCHIVE</span>
-      <h2 class="section-title">Featured Engineering Projects</h2>
+      <h2 class="section-title">Completed Projects</h2>
     </div>
 
     <div class="horizontal-carousel">
+      <!-- Computer Vision Assignments -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">Computer Vision & Image Processing</span>
+          <p class="specs">Sep 2026 | OpenCV, NumPy, Matplotlib</p>
+          <ul>
+            <li>Implemented MRI brain image enhancement, piecewise intensity transformations, and HSV/$L^*a^*b^*$ color-space processing.</li>
+            <li>Built custom histogram equalization, Sobel gradient edge filtering, and GrabCut segmentation algorithms.</li>
+          </ul>
+          <div class="tags"><span class="tag">OpenCV</span><span class="tag">Image Processing</span><span class="tag">Python</span></div>
+        </div>
+        <div>
+          <a href="https://github.com/manjarimeedeniya/EN3160-Assignment-01" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
+        </div>
+      </div>
+
       <!-- Atlas EQ v1 -->
       <div class="card carousel-card">
         <div>
-          <span class="card-title">Atlas EQ v1 — German Equatorial Mount</span>
-          <p class="specs">SolidWorks | Structural CAD | EN2160 Module</p>
+          <span class="card-title">Atlas EQ v1 — Star-Tracking Mount</span>
+          <p class="specs">Feb 2026 – Jul 2026 | German Equatorial Mount Structure</p>
           <ul>
-            <li>Engineered the mechanical base and alt-azimuth subsystem for the Atlas EQ v1 German Equatorial star-tracking mount.</li>
-            <li>Created precise structural assembly models in SolidWorks optimized for mild steel laser cutting and 3D printing.</li>
-            <li>Ensured precise physical tolerancing and structural alignment for astrophotography tracking capabilities.</li>
+            <li>Designed base and alt-azimuth subsystems for fine polar alignment in long-exposure astrophotography.</li>
+            <li>Engineered parts in SolidWorks for mild-steel laser cutting and 3D printing with precision tolerancing.</li>
           </ul>
-          <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Laser Cutting</span><span class="tag">3D Printing</span><span class="tag">CAD Assembly</span></div>
+          <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Laser Cutting</span><span class="tag">3D Printing</span></div>
         </div>
         <div>
           <div class="photo-gallery">
             <div class="photo-card"><img src="images/Atlas 1.jpeg" alt="Atlas Mount 1" loading="lazy"></div>
             <div class="photo-card"><img src="images/Atlas 2.jpeg" alt="Atlas Mount 2" loading="lazy"></div>
           </div>
+          <a href="https://github.com/buddhima-imbulpitiya/Atlas-EQ-v1" target="_blank" class="github-btn">
+            <i class="devicon-github-original"></i> Repository ↗
+          </a>
         </div>
       </div>
 
-      <!-- Analog Buck Converter -->
+      <!-- Buck Converter -->
       <div class="card carousel-card">
         <div>
-          <span class="card-title">Analog DC-DC Buck Converter</span>
-          <p class="specs">Power Electronics | High-Side Drive | Op-Amp Feedback</p>
+          <span class="card-title">Analog All-Class Buck Converter</span>
+          <p class="specs">Feb 2026 – May 2026 | Power Electronics & IR2104 Driver</p>
           <ul>
-            <li>Designed and hardware-implemented an analog DC-DC buck converter for an electronic circuit design module.</li>
-            <li>Built switching stages integrated with high-side drive control and operational amplifier feedback circuitry.</li>
-            <li>Validated dynamic voltage regulation and power conversion efficiency.</li>
+            <li>Co-designed a discrete buck converter featuring TL494 PWM generation, IR2104 gate driver, and op-amp feedback control.</li>
+            <li>Validated switching waveforms, efficiency, and transient response on oscilloscopes during active load testing.</li>
           </ul>
-          <div class="tags"><span class="tag">Power Electronics</span><span class="tag">Circuit Design</span><span class="tag">Analog Feedback</span></div>
+          <div class="tags"><span class="tag">Analog Circuit Design</span><span class="tag">Power Electronics</span><span class="tag">LTspice</span></div>
         </div>
         <div>
           <div class="photo-gallery">
-            <div class="photo-card"><img src="images/buck.jpeg" alt="Buck Converter Circuit" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Buck_Converter 1.jpeg" alt="Buck Converter Circuit" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Buck_Converter 2.jpeg" alt="Buck Converter Testing" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FallGuard -->
+      <div class="card carousel-card">
+        <div>
+          <span class="card-title">FallGuard — Wearable Assistance Device</span>
+          <p class="specs">Jul 2025 – Nov 2025 | Embedded Hardware & Fall Detection</p>
+          <ul>
+            <li>Co-developed a wearable emergency response device with real-time fall detection using MPU6050 IMU sensors and ESP32.</li>
+            <li>Configured GSM/GPS telemetry modules for automated SMS alerts and live GPS tracking during emergency incidents.</li>
+          </ul>
+          <div class="tags"><span class="tag">ESP32</span><span class="tag">Embedded C++</span><span class="tag">MPU6050</span><span class="tag">GSM/GPS</span></div>
+        </div>
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/FallGuard 1.jpeg" alt="FallGuard Device Front" loading="lazy"></div>
+            <div class="photo-card"><img src="images/FallGuard 2.jpeg" alt="FallGuard Circuit Internal" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -488,106 +672,154 @@
       <!-- Hardware-Accelerated UART Controller -->
       <div class="card carousel-card">
         <div>
-          <span class="card-title">FPGA UART & 7-Segment Display Controller</span>
-          <p class="specs">Verilog HDL | Altera DE0-Nano | Quartus Prime</p>
+          <span class="card-title">Hardware UART Controller & Display Subsystem</span>
+          <p class="specs">Oct 2025 – Dec 2025 | FPGA & Digital Logic Design</p>
           <ul>
-            <li>Developed a hardware-accelerated UART controller and multi-digit display driver on an Altera DE0-Nano FPGA.</li>
-            <li>Programmed modular Verilog code to manage asynchronous UART transmission and multiplexed 7-segment display logic.</li>
-            <li>Verified digital logic timing and hardware synthesis using Quartus Prime.</li>
+            <li>Designed and simulated a custom UART receiver/transmitter engine in Verilog HDL on an Altera DE0-Nano FPGA.</li>
+            <li>Integrated a multiplexed 7-segment LED controller with hardware debouncing and baud rate generation modules.</li>
           </ul>
-          <div class="tags"><span class="tag">Verilog</span><span class="tag">FPGA</span><span class="tag">UART</span><span class="tag">Quartus Prime</span></div>
-        </div>
-      </div>
-
-      <!-- Electronic Weighing Scale -->
-      <div class="card carousel-card">
-        <div>
-          <span class="card-title">10 kg Electronic Weighing Scale</span>
-          <p class="specs">Strain Gauge Load Cell | Instrumentation Amplifiers | 3D Printing</p>
-          <ul>
-            <li>Engineered an electronic weighing scale capable of accurate measurements up to 10 kg.</li>
-            <li>Designed low-noise instrumentation amplifier stages and active filter circuits for strain gauge signal processing.</li>
-            <li>Designed and fabricated a custom 3D-printed enclosure for the complete scale hardware assembly.</li>
-          </ul>
-          <div class="tags"><span class="tag">Analog Amplifiers</span><span class="tag">Load Cells</span><span class="tag">3D Printing</span></div>
+          <div class="tags"><span class="tag">Verilog HDL</span><span class="tag">FPGA</span><span class="tag">Quartus Prime</span><span class="tag">DE0-Nano</span></div>
         </div>
         <div>
           <div class="photo-gallery">
-            <div class="photo-card"><img src="images/Final Product Photo 2.jpeg" alt="Weighing Scale" loading="lazy"></div>
+            <div class="photo-card"><img src="images/FPGA 1.jpeg" alt="FPGA Board Testing" loading="lazy"></div>
           </div>
         </div>
       </div>
 
-      <!-- Campus Network Infrastructure -->
+      <!-- Two-Way Digital Paging System -->
       <div class="card carousel-card">
         <div>
-          <span class="card-title">Campus Backbone & LAN Network Design</span>
-          <p class="specs">Cisco Packet Tracer | Dual-Homing | OSPF Routing</p>
+          <span class="card-title">Two-Way Digital Paging System</span>
+          <p class="specs">Dec 2025 – Feb 2026 | SDR & GNU Radio</p>
           <ul>
-            <li>Designed and simulated a comprehensive campus backbone network and LAN for the University of Moratuwa.</li>
-            <li>Developed complete topology diagrams, IPv4/IPv6 addressing architecture, and OSPF routing protocols.</li>
-            <li>Configured dual-homing redundancy strategies and prepared a detailed Bill of Quantities (BOQ).</li>
+            <li>Engineered a two-way short-text paging framework using Software-Defined Radio (SDR) transceivers and GNU Radio flowgraphs.</li>
+            <li>Implemented custom packet preamble framing, CRC-16 error check validation, and stop-and-wait ARQ retransmission logic.</li>
           </ul>
-          <div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">IPv4/IPv6</span><span class="tag">OSPF</span><span class="tag">Network Topology</span></div>
+          <div class="tags"><span class="tag">GNU Radio</span><span class="tag">SDR</span><span class="tag">Digital Communications</span><span class="tag">Python</span></div>
+        </div>
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/Paging 1.jpeg" alt="SDR Paging Flowgraph" loading="lazy"></div>
+          </div>
         </div>
       </div>
 
-      <!-- Software-Defined Radio Digital Pager -->
+      <!-- Campus Network Infrastructure Design -->
       <div class="card carousel-card">
         <div>
-          <span class="card-title">Two-Way SDR Digital Paging System</span>
-          <p class="specs">GNU Radio | SDR Platforms | Digital Communication</p>
+          <span class="card-title">Campus Enterprise Network Design</span>
+          <p class="specs">Mar 2026 – Apr 2026 | Cisco Packet Tracer & Network Architecture</p>
           <ul>
-            <li>Co-developed a two-way digital paging system utilizing Software-Defined Radio (SDR) platforms and GNU Radio.</li>
-            <li>Implemented custom addressing, acknowledgment mechanisms, and digital signal processing flowgraphs for short-text transmission.</li>
+            <li>Architected a multi-campus enterprise network topology incorporating redundant core, distribution, and access layer switches.</li>
+            <li>Configured dual-stack IPv4/IPv6 addressing, OSPF dynamic routing, VLAN segmentation, DHCP relay, and NAT gateways.</li>
           </ul>
-          <div class="tags"><span class="tag">GNU Radio</span><span class="tag">SDR</span><span class="tag">Signal Processing</span><span class="tag">Digital Comms</span></div>
+          <div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">OSPF</span><span class="tag">IPv4/IPv6</span><span class="tag">VLAN Routing</span></div>
+        </div>
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/Network 1.jpeg" alt="Campus Network Topology" loading="lazy"></div>
+          </div>
         </div>
       </div>
 
-      <!-- FallGuard Assistance Device -->
+      <!-- Precision Electronic Weighing Scale -->
       <div class="card carousel-card">
         <div>
-          <span class="card-title">FallGuard — Wearable Assistance Device</span>
-          <p class="specs">Embedded Hardware | Wearable Sensors | Prototype Design</p>
+          <span class="card-title">Precision 10kg Electronic Scale</span>
+          <p class="specs">May 2025 – Jul 2025 | Instrumentation & Signal Conditioning</p>
           <ul>
-            <li>Participated in the conceptualization, component selection, and circuit design of FallGuard.</li>
-            <li>Built physical prototype circuits for fall detection and wearable assistance tracking.</li>
+            <li>Designed a strain-gauge load cell instrumentation amplifier stage utilizing high-precision differential operational amplifiers.</li>
+            <li>Integrated low-pass filtering and calibrated ADC conversion routines for sub-gram accuracy, housed in a custom 3D enclosure.</li>
           </ul>
-          <div class="tags"><span class="tag">Wearables</span><span class="tag">Embedded Hardware</span><span class="tag">Sensor Integration</span></div>
+          <div class="tags"><span class="tag">Op-Amp Instrumentation</span><span class="tag">Signal Conditioning</span><span class="tag">Load Cell</span></div>
+        </div>
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/Scale 1.jpeg" alt="Electronic Scale Hardware" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP & VOLUNTEERING SECTION -->
+  <!-- LEADERSHIP, VOLUNTEERING & PUBLIC SPEAKING -->
   <section id="volunteering">
     <div class="section-head">
-      <span class="eyebrow">COMMUNITY & ORGANIZATIONS</span>
-      <h2 class="section-title">Leadership & Volunteering</h2>
+      <span class="eyebrow">LEADERSHIP & COMMUNITY</span>
+      <h2 class="section-title">Volunteering & Public Speaking</h2>
     </div>
 
-    <div class="vertical-stack">
+    <div class="grid-two">
+      <!-- IEEE Student Branch & MDC -->
       <div class="card">
-        <span class="card-title">IEEE Student Branch — University of Moratuwa</span>
-        <p class="specs">Active Volunteer & Organizational Committee Member</p>
-        <ul>
-          <li>Contributed across multiple initiatives within the IEEE Student Branch at the University of Moratuwa.</li>
-          <li>Served on the Membership Development Committee, driving student outreach and engagement.</li>
-          <li>Participated in selection committees for MoraForesight events and served on the organizing committee for RoboRoarz Sri Lanka.</li>
-        </ul>
-        <div class="tags">
-          <span class="tag">IEEE Student Branch</span><span class="tag">RoboRoarz Sri Lanka</span><span class="tag">MoraForesight</span><span class="tag">Project Coordination</span>
+        <div>
+          <span class="card-title">IEEE Student Branch & MDC Coordinator</span>
+          <p class="specs">IEEE Student Branch, University of Moratuwa</p>
+          <ul>
+            <li>Served on the Membership Development Committee (MDC), organizing membership drives, technical workshops, and student outreach programs.</li>
+            <li>Coordinated logistics and student engagement initiatives across campus to foster active participation in IEEE activities.</li>
+          </ul>
+          <div class="photo-gallery" style="margin-top: 12px;">
+            <div class="photo-card"><img src="images/MDC 1.jpeg" alt="IEEE MDC Event 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/MDC 2.jpeg" alt="IEEE MDC Event 2" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Announcing & Master of Ceremonies -->
+      <div class="card">
+        <div>
+          <span class="card-title">Announcing, Public Speaking & Event Hosting</span>
+          <p class="specs">University & Departmental Events</p>
+          <ul>
+            <li>Official Master of Ceremonies and announcer for major university flagship events, IEEE conferences, and departmental ceremonies.</li>
+            <li>Delivered live announcements, moderated panel discussions, and led stage coordination for audiences exceeding 500+ attendees.</li>
+          </ul>
+          <div class="photo-gallery" style="margin-top: 12px;">
+            <div class="photo-card"><img src="images/Announcing 1.jpeg" alt="Announcing Event 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Announcing 2.jpeg" alt="Announcing Event 2" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RoboRoarz Sri Lanka -->
+      <div class="card">
+        <div>
+          <span class="card-title">RoboRoarz Sri Lanka — Organizing Committee</span>
+          <p class="specs">National Robotics Competition</p>
+          <ul>
+            <li>Contributed to the execution and operational management of RoboRoarz Sri Lanka, an autonomous robotics competition.</li>
+            <li>Managed participant coordination, arena setups, and live event moderation throughout the competition days.</li>
+          </ul>
+          <div class="photo-gallery" style="margin-top: 12px;">
+            <div class="photo-card"><img src="images/RoboRoarz 1.jpeg" alt="RoboRoarz Event 1" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MoraForesight -->
+      <div class="card">
+        <div>
+          <span class="card-title">MoraForesight — Selection Committee & Event Lead</span>
+          <p class="specs">University Talent & Mentorship Program</p>
+          <ul>
+            <li>Served on the selection committee for candidate evaluation and interview processing.</li>
+            <li>Facilitated session coordination and team mentorship programs for undergraduate participants.</li>
+          </ul>
+          <div class="photo-gallery" style="margin-top: 12px;">
+            <div class="photo-card"><img src="images/MoraForesight 1.jpeg" alt="MoraForesight Event 1" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT & REFERENCES -->
   <section id="contact">
     <div class="section-head" style="text-align: center;">
-      <span class="eyebrow">// GET IN TOUCH</span>
-      <h2 class="section-title">Let's Connect</h2>
+      <span class="eyebrow">GET IN TOUCH</span>
+      <h2 class="section-title">Contact & Professional References</h2>
     </div>
 
     <div class="contact-info-list">
@@ -597,16 +829,36 @@
       </div>
       <div class="contact-info-item">
         <span>LinkedIn:</span>
-        <a href="https://linkedin.com/in/manjarimeedeniya" target="_blank">linkedin.com/in/manjarimeedeniya</a>
+        <a href="https://www.linkedin.com/in/manjari-meedeniya-152288219/" target="_blank">linkedin.com/in/manjari-meedeniya-152288219/</a>
       </div>
       <div class="contact-info-item">
         <span>GitHub:</span>
         <a href="https://github.com/manjarimeedeniya" target="_blank">github.com/manjarimeedeniya</a>
       </div>
     </div>
+
+    <div class="ref-grid" style="margin-top: 40px;">
+      <div class="ref-card">
+        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px;">Dr. Peethianga Fernando</h3>
+        <p style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.85rem; margin-bottom: 8px;">Senior Lecturer</p>
+        <p style="color: var(--text-sub); font-size: 0.88rem;">Department of Electronic and Telecommunication Engineering,<br>University of Moratuwa, Sri Lanka</p>
+        <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 8px;">Email: peethianga@uom.lk</p>
+      </div>
+
+      <div class="ref-card">
+        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px;">Dr. Ranga Rodrigo</h3>
+        <p style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.85rem; margin-bottom: 8px;">Professor</p>
+        <p style="color: var(--text-sub); font-size: 0.88rem;">Department of Electronic and Telecommunication Engineering,<br>University of Moratuwa, Sri Lanka</p>
+        <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 8px;">Email: ranga@uom.lk</p>
+      </div>
+    </div>
   </section>
 
 </main>
+
+<footer style="border-top: 1px solid var(--card-border); padding: 40px 0; margin-top: 60px; text-align: center; color: var(--text-sub); font-family: var(--font-code); font-size: 0.85rem;">
+  <p>© 2026 Manjari Meedeniya. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
