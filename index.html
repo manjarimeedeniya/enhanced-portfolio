@@ -169,7 +169,7 @@
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
   .tag { font-family: var(--font-code); font-size: 0.78rem; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 4px 10px; border-radius: 6px; color: var(--text-sub); }
 
-  /* HORIZONTAL SCROLL CAROUSEL FOR COMPLETED PROJECTS */
+  /* HORIZONTAL SCROLL CAROUSELS */
   .horizontal-carousel {
     display: flex; gap: 28px; overflow-x: auto; padding-bottom: 20px;
     scroll-snap-type: x mandatory; scrollbar-width: thin;
@@ -235,10 +235,6 @@
   }
   .btn-action:hover { transform: scale(1.04); color: #000; box-shadow: 0 0 20px rgba(0, 242, 254, 0.4); }
 
-  /* REFERENCES GRID */
-  .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-  .ref-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 24px; border-radius: var(--radius); }
-
   @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
   @media(max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
@@ -259,7 +255,8 @@
       <li><a href="#skills">// Skills</a></li>
       <li><a href="#upcoming">// Ongoing</a></li>
       <li><a href="#projects">// Projects</a></li>
-      <li><a href="#volunteering">// Leadership</a></li>
+      <li><a href="#volunteering">// Volunteering & Speaking</a></li>
+      <li><a href="#extracurricular">// Extracurricular</a></li>
       <li><a href="#contact">// Contact</a></li>
     </ul>
   </div>
@@ -743,16 +740,16 @@
     </div>
   </section>
 
-  <!-- LEADERSHIP, VOLUNTEERING & PUBLIC SPEAKING -->
+  <!-- VOLUNTEERING AND PUBLIC SPEAKING -->
   <section id="volunteering">
     <div class="section-head">
-      <span class="eyebrow">LEADERSHIP & COMMUNITY</span>
+      <span class="eyebrow">COMMUNITY & OUTREACH</span>
       <h2 class="section-title">Volunteering & Public Speaking</h2>
     </div>
 
-    <div class="grid-two">
+    <div class="horizontal-carousel">
       <!-- IEEE Student Branch & MDC -->
-      <div class="card">
+      <div class="card carousel-card">
         <div>
           <span class="card-title">IEEE Student Branch & MDC Coordinator</span>
           <p class="specs">IEEE Student Branch, University of Moratuwa</p>
@@ -760,6 +757,8 @@
             <li>Served on the Membership Development Committee (MDC), organizing membership drives, technical workshops, and student outreach programs.</li>
             <li>Coordinated logistics and student engagement initiatives across campus to foster active participation in IEEE activities.</li>
           </ul>
+        </div>
+        <div>
           <div class="photo-gallery" style="margin-top: 12px;">
             <div class="photo-card"><img src="images/MDC 1.jpeg" alt="IEEE MDC Event 1" loading="lazy"></div>
             <div class="photo-card"><img src="images/MDC 2.jpeg" alt="IEEE MDC Event 2" loading="lazy"></div>
@@ -768,7 +767,7 @@
       </div>
 
       <!-- Announcing & Master of Ceremonies -->
-      <div class="card">
+      <div class="card carousel-card">
         <div>
           <span class="card-title">Announcing, Public Speaking & Event Hosting</span>
           <p class="specs">University & Departmental Events</p>
@@ -776,6 +775,8 @@
             <li>Official Master of Ceremonies and announcer for major university flagship events, IEEE conferences, and departmental ceremonies.</li>
             <li>Delivered live announcements, moderated panel discussions, and led stage coordination for audiences exceeding 500+ attendees.</li>
           </ul>
+        </div>
+        <div>
           <div class="photo-gallery" style="margin-top: 12px;">
             <div class="photo-card"><img src="images/Announcing 1.jpeg" alt="Announcing Event 1" loading="lazy"></div>
             <div class="photo-card"><img src="images/Announcing 2.jpeg" alt="Announcing Event 2" loading="lazy"></div>
@@ -784,7 +785,7 @@
       </div>
 
       <!-- RoboRoarz Sri Lanka -->
-      <div class="card">
+      <div class="card carousel-card">
         <div>
           <span class="card-title">RoboRoarz Sri Lanka — Organizing Committee</span>
           <p class="specs">National Robotics Competition</p>
@@ -792,6 +793,8 @@
             <li>Contributed to the execution and operational management of RoboRoarz Sri Lanka, an autonomous robotics competition.</li>
             <li>Managed participant coordination, arena setups, and live event moderation throughout the competition days.</li>
           </ul>
+        </div>
+        <div>
           <div class="photo-gallery" style="margin-top: 12px;">
             <div class="photo-card"><img src="images/RoboRoarz 1.jpeg" alt="RoboRoarz Event 1" loading="lazy"></div>
           </div>
@@ -799,7 +802,7 @@
       </div>
 
       <!-- MoraForesight -->
-      <div class="card">
+      <div class="card carousel-card">
         <div>
           <span class="card-title">MoraForesight — Selection Committee & Event Lead</span>
           <p class="specs">University Talent & Mentorship Program</p>
@@ -807,6 +810,8 @@
             <li>Served on the selection committee for candidate evaluation and interview processing.</li>
             <li>Facilitated session coordination and team mentorship programs for undergraduate participants.</li>
           </ul>
+        </div>
+        <div>
           <div class="photo-gallery" style="margin-top: 12px;">
             <div class="photo-card"><img src="images/MoraForesight 1.jpeg" alt="MoraForesight Event 1" loading="lazy"></div>
           </div>
@@ -815,11 +820,34 @@
     </div>
   </section>
 
-  <!-- CONTACT & REFERENCES -->
+  <!-- EXTRACURRICULAR OUTSIDE THE LAB -->
+  <section id="extracurricular">
+    <div class="section-head">
+      <span class="eyebrow">BEYOND ACADEMICS</span>
+      <h2 class="section-title">Extracurricular Outside the Lab</h2>
+    </div>
+
+    <div class="grid-two">
+      <div class="card">
+        <div>
+          <span class="card-title">Badminton Tournaments</span>
+          <p class="specs">Inter-Hall & University Competitions</p>
+          <ul>
+            <li>Competed in inter-hall / university badminton tournaments.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Athletics</span><span class="tag">Badminton</span><span class="tag">Team Sports</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <div class="section-head" style="text-align: center;">
       <span class="eyebrow">GET IN TOUCH</span>
-      <h2 class="section-title">Contact & Professional References</h2>
+      <h2 class="section-title">Contact</h2>
     </div>
 
     <div class="contact-info-list">
@@ -834,22 +862,6 @@
       <div class="contact-info-item">
         <span>GitHub:</span>
         <a href="https://github.com/manjarimeedeniya" target="_blank">github.com/manjarimeedeniya</a>
-      </div>
-    </div>
-
-    <div class="ref-grid" style="margin-top: 40px;">
-      <div class="ref-card">
-        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px;">Dr. Peethianga Fernando</h3>
-        <p style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.85rem; margin-bottom: 8px;">Senior Lecturer</p>
-        <p style="color: var(--text-sub); font-size: 0.88rem;">Department of Electronic and Telecommunication Engineering,<br>University of Moratuwa, Sri Lanka</p>
-        <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 8px;">Email: peethianga@uom.lk</p>
-      </div>
-
-      <div class="ref-card">
-        <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px;">Dr. Ranga Rodrigo</h3>
-        <p style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.85rem; margin-bottom: 8px;">Professor</p>
-        <p style="color: var(--text-sub); font-size: 0.88rem;">Department of Electronic and Telecommunication Engineering,<br>University of Moratuwa, Sri Lanka</p>
-        <p style="color: var(--text-sub); font-size: 0.85rem; margin-top: 8px;">Email: ranga@uom.lk</p>
       </div>
     </div>
   </section>
