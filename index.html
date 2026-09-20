@@ -203,7 +203,7 @@
   }
   .pulse-dot { width: 8px; height: 8px; background: var(--neon-green); border-radius: 50%; animation: pulse 1.5s infinite; }
 
-  /* PHOTO GALLERIES */
+  /* PHOTO & MEDIA GALLERIES */
   .photo-gallery {
     display: flex; gap: 16px; overflow-x: auto; padding: 10px 0 4px;
     scroll-snap-type: x mandatory;
@@ -216,7 +216,7 @@
     border: 1px solid var(--card-border); background: #000; scroll-snap-align: start;
     position: relative; transition: 0.3s ease;
   }
-  .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.4s ease; }
+  .photo-card img, .photo-card video { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.4s ease; }
   .photo-card:hover img { transform: scale(1.05); }
 
   /* CONTACT DETAILS BOX */
@@ -621,6 +621,7 @@
           <div class="photo-gallery">
             <div class="photo-card"><img src="images/Atlas 1.jpeg" alt="Atlas Mount 1" loading="lazy"></div>
             <div class="photo-card"><img src="images/Atlas 2.jpeg" alt="Atlas Mount 2" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Atlas3.jpeg" alt="Atlas Mount 3" loading="lazy"></div>
           </div>
           <a href="https://github.com/buddhima-imbulpitiya/Atlas-EQ-v1" target="_blank" class="github-btn">
             <i class="devicon-github-original"></i> Repository ↗
@@ -641,8 +642,8 @@
         </div>
         <div>
           <div class="photo-gallery">
-            <div class="photo-card"><img src="images/Buck_Converter 1.jpeg" alt="Buck Converter Circuit" loading="lazy"></div>
-            <div class="photo-card"><img src="images/Buck_Converter 2.jpeg" alt="Buck Converter Testing" loading="lazy"></div>
+            <div class="photo-card"><img src="images/buck.jpeg" alt="Buck Converter Circuit" loading="lazy"></div>
+            <div class="photo-card"><img src="images/buck 2.png" alt="Buck Converter Waveform Testing" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -660,8 +661,8 @@
         </div>
         <div>
           <div class="photo-gallery">
-            <div class="photo-card"><img src="images/FallGuard 1.jpeg" alt="FallGuard Device Front" loading="lazy"></div>
-            <div class="photo-card"><img src="images/FallGuard 2.jpeg" alt="FallGuard Circuit Internal" loading="lazy"></div>
+            <div class="photo-card"><img src="images/falltrack watch.jfif" alt="FallGuard Prototype Watch" loading="lazy"></div>
+            <div class="photo-card"><img src="images/falltrack team.jpeg" alt="FallGuard Project Team" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -715,7 +716,7 @@
         </div>
         <div>
           <div class="photo-gallery">
-            <div class="photo-card"><img src="images/Network 1.jpeg" alt="Campus Network Topology" loading="lazy"></div>
+            <div class="photo-card"><img src="images/university_backbone.png" alt="Campus Network Backbone Topology" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -733,7 +734,8 @@
         </div>
         <div>
           <div class="photo-gallery">
-            <div class="photo-card"><img src="images/Scale 1.jpeg" alt="Electronic Scale Hardware" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Final Product Photo 2.jpeg" alt="Electronic Scale Final Product Assembly" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Final Product Photo 3.png" alt="Electronic Scale Measuring Load Cell" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -760,8 +762,7 @@
         </div>
         <div>
           <div class="photo-gallery" style="margin-top: 12px;">
-            <div class="photo-card"><img src="images/MDC 1.jpeg" alt="IEEE MDC Event 1" loading="lazy"></div>
-            <div class="photo-card"><img src="images/MDC 2.jpeg" alt="IEEE MDC Event 2" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Membership Committee.jpeg" alt="IEEE Membership Development Committee" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -778,8 +779,12 @@
         </div>
         <div>
           <div class="photo-gallery" style="margin-top: 12px;">
-            <div class="photo-card"><img src="images/Announcing 1.jpeg" alt="Announcing Event 1" loading="lazy"></div>
-            <div class="photo-card"><img src="images/Announcing 2.jpeg" alt="Announcing Event 2" loading="lazy"></div>
+            <div class="photo-card">
+              <video controls preload="metadata" poster="images/M_Photo.jpeg">
+                <source src="images/ieee compering.mp4" type="video/mp4">
+                Your browser does not support video playback.
+              </video>
+            </div>
           </div>
         </div>
       </div>
@@ -796,7 +801,9 @@
         </div>
         <div>
           <div class="photo-gallery" style="margin-top: 12px;">
-            <div class="photo-card"><img src="images/RoboRoarz 1.jpeg" alt="RoboRoarz Event 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/Roboaroaz OC.jpeg" alt="RoboRoarz Organizing Committee" loading="lazy"></div>
+            <div class="photo-card"><img src="images/roboaroaz 1.jpeg" alt="RoboRoarz Event 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/roboaroarz 2.jpeg" alt="RoboRoarz Event 2" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -813,7 +820,10 @@
         </div>
         <div>
           <div class="photo-gallery" style="margin-top: 12px;">
-            <div class="photo-card"><img src="images/MoraForesight 1.jpeg" alt="MoraForesight Event 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/moraf 1.jpeg" alt="MoraForesight Session 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/moraf2.jpeg" alt="MoraForesight Session 2" loading="lazy"></div>
+            <div class="photo-card"><img src="images/moraforseight 4.0 1.jpeg" alt="MoraForesight 4.0 Event 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/moraforseight 4.0 2.jpeg" alt="MoraForesight 4.0 Event 2" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -833,10 +843,17 @@
           <span class="card-title">Badminton Tournaments</span>
           <p class="specs">Inter-Hall & University Competitions</p>
           <ul>
-            <li>Competed in inter-hall / university badminton tournaments.</li>
+            <li>Competed in inter-hall and university badminton tournaments.</li>
           </ul>
-          <div class="tags">
+          <div class="tags" style="margin-bottom: 12px;">
             <span class="tag">Athletics</span><span class="tag">Badminton</span><span class="tag">Team Sports</span>
+          </div>
+        </div>
+        <div>
+          <div class="photo-gallery">
+            <div class="photo-card"><img src="images/Badminton 1.jpeg" alt="Badminton Tournament 1" loading="lazy"></div>
+            <div class="photo-card"><img src="images/badminton 2.jpeg" alt="Badminton Tournament 2" loading="lazy"></div>
+            <div class="photo-card"><img src="images/badminton 3.jpeg" alt="Badminton Tournament 3" loading="lazy"></div>
           </div>
         </div>
       </div>
